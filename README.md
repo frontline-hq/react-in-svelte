@@ -1,18 +1,41 @@
-# create-svelte
+# React in svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A library that enables you to use React components in Svelte.
 
-## Creating a project
+It even utilizes SSR and hydration to reduce client side rendering work.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Installation
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+`yarn add @frontline-hq/react-in-svelte` or `npm install @frontline-hq/react-in-svelte`
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Usage
+
+Import our Wrapper in your application and pass a VNode to it. We recommend creating a VNode with htm.
+
+```svelte
+<script lang="ts">
+    import {h, type VNode} from 'preact';
+    import ReactWrapper from "@frontline-hq/react-in-svelte"
+    import htm from "htm"
+    import SomeComponent from "SomeComponentLibrary"
+
+    const html = htm.bind(h)
+
+    const props = {
+        // a lot of props here
+    }
+
+    const vNode = html`
+        <${SomeComponent} ...${props}>
+            <div>Some more components here</div>
+        <//>
+    ` as VNode
+</script>
+
+<ReactWrapper {vNode} />
 ```
+
+This will create a `<div></div>` within ReactWrapper to host the (p)react dom. The React components will then be inserted within the wrapper.
 
 ## Developing
 
@@ -33,6 +56,9 @@ To create a production version of your app:
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Publishing
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+cd package
+npm publish
+```
