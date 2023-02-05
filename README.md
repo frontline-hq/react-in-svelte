@@ -1,6 +1,6 @@
 # React in svelte
 
-A library that enables you to use React components in Svelte.
+A library that enables you to use React components in Svelte - 6.8kB mified & gzipped 
 
 It even utilizes SSR and hydration to reduce client side rendering work.
 
