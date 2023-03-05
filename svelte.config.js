@@ -8,9 +8,6 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		optimizeDeps: {
-			exclude: ['$app/stores']
-		},
 		adapter: adapter()
 	}
 };
