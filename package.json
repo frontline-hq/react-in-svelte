@@ -1,6 +1,6 @@
 {
 	"name": "@frontline-hq/react-in-svelte",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "A library that allows you to use react components in svelte",
 	"repository": "git@github.com:frontline-hq/react-in-svelte",
 	"author": "Benjamin Preiss benjaminpreiss@protonmail.com",
