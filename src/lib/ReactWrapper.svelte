@@ -3,16 +3,15 @@
 	import { render as preactPrerender } from 'preact-render-to-string';
 	export let vNode: VNode;
 
-	$: prerendered = preactPrerender(vNode as VNode<{}>);
+	const prerendered = preactPrerender(vNode as VNode<{}>);
 
-	function hydrate(
-		node: HTMLElement,
-		{ vNode, prerendered }: { vNode: VNode; prerendered: string }
-	) {
+	function hydrate(node: HTMLElement, vNode: VNode) {
 		node.innerHTML = prerendered;
 		preactHydrate(vNode, node);
 		return {
-			// Do I need to update here?
+			update(vNode: VNode) {
+				preactHydrate(vNode, node);
+			},
 			destroy() {
 				preactRender(null, node);
 			}
@@ -20,4 +19,4 @@
 	}
 </script>
 
-<div use:hydrate={{ vNode, prerendered }} />
+<div use:hydrate={vNode} />

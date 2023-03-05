@@ -927,6 +927,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+htm@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/htm/-/htm-3.1.1.tgz#49266582be0dc66ed2235d5ea892307cc0c24b78"
+  integrity sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==
+
 ignore@^5.2.0:
   version "5.2.4"
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.2.4.tgz"
